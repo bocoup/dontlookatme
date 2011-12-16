@@ -1,3 +1,6 @@
 [submodule "lib"]
 	path = lib
 	url = https://github.com/incompl/boxbox
+[submodule "boxbox"]
+	path = boxbox
+	url = https://github.com/incompl/boxbox
