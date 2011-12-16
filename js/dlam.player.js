@@ -19,7 +19,7 @@
 
     player.onKeydown(function( e ){
 
-      var key = keyDecode( e );
+      var key = global.keyDecode( e );
       var movementForce = 60;
       var impulseForce = 30;
       var lastJump = Date.now();

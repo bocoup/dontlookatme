@@ -20,19 +20,19 @@
     //   shape: 'polygon',
     //   x: 0,
     //   y: 14,
-    //   points: [
-    //     {x: 0, y: 0},
-    //     {x: 0, y: -1},
-    //     {x: 60, y: -16},
-    //     {x: 60, y: -1}
-    //   ],
+    boazPoints =   [
+         {x: 0, y: 20},
+         {x: 0, y: 0},
+         {x: 60, y: 0},
+         {x: 60, y: 20}
+       ];
     //   restitution: 0,
     //   type: 'static'
     // });
 
 
     world.camera({x:0, y:0});
-    world.scale(20);
+    world.scale(5);
 
     function generateInclineBlockThingyOmg( width, height ){
       var points = [],
@@ -40,42 +40,44 @@
             points.push( { x: x, y: y } );
           }
           // sry, no sleep so fuck it
-          maxWidth = 20,
+          maxWidth = 15,
           minWidth = 10,
-          maxHeight = 10,
-          minHeight = 4,
+          maxHeight = 6,
+          minHeight = 3,
           ohshit = 2000,
-          x = 0,
-          y = height/2,
+          x = width,
+          y = 0-height,
           generated = false,
           // falseIsX
           onX = true;
 
       // add starting "point"
-      addPoint(x,y);
+      addPoint( x, y );
+      console.log( x, y );
+      console.log( x, y );
+      // addPoint(x, y );
       
       while ( !generated && ohshit-- ) {
         if ( onX ) {
-          x += ~~( Math.random() * (maxWidth-minWidth)) + minWidth;
+          x -= ~~( Math.random() * (maxWidth-minWidth)) + minWidth;
         } else {
-          y -= ~~( Math.random() * (maxHeight-minHeight)) + minHeight;
+          y += ~~( Math.random() * (maxHeight-minHeight)) + minHeight;
         }
         onX = !onX;
         addPoint( x, y );
-        if ( !onX && x > ( width - maxWidth + minWidth )) {
+        if ( !onX && x < ( maxWidth + minWidth ) ) {
           generated = true;
         }
         console.log( "X: %d Y: %d", x, y );
       }
 
       // create last, top-right point
-      //addPoint( x, y );
+      addPoint( 0, 0 );
 
       // fill in the big block
       // bottom right
-      addPoint( x, height );
-      addPoint( 0, height );
-
+      addPoint( width, 0 );
+      console.log( x, 0 );
       return points;
     }
 
@@ -85,9 +87,11 @@
       color: 'black',
       shape: 'polygon',
       x: 0,
-      y: 0,
-      points: generateInclineBlockThingyOmg( 0, 0 )
+      y: 90,
+      //points: boazPoints
+      points: generateInclineBlockThingyOmg( 30, 30 )
     });
+    console.dir( world );
 
   }
 }( this, this.dlam, this.boxbox ));
