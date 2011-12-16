@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function() {
 
   dlam.canvas = document.getElementById('myface');

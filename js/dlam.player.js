@@ -1,7 +1,6 @@
 (function( global, dlam, boxbox ) {
   dlam.player = function(){
 
-
     var player = dlam.world.createEntity({
         name: 'player',
         x: .5,
