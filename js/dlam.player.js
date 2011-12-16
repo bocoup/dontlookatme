@@ -1,12 +1,8 @@
 (function( global, dlam, boxbox ) {
-  dlam.entity = function(){
-    console.log('asd')
-    var world = boxbox.createWorld(dlam.canvas, {
-      debugDraw:false,
-      gravity: 40
-    });
+  dlam.player = function(){
 
-    var player = world.createEntity({
+
+    var player = dlam.world.createEntity({
         name: 'player',
         x: .5,
         y: 12,
@@ -22,7 +18,7 @@
     player.health = 100;
     player.points = 0;
 
-    world.createEntity({
+    dlam.world.createEntity({
       name: 'terrain',
       shape: 'polygon',
       x: 0,
@@ -88,24 +84,5 @@
       }
     })
 
-    //Enemies
-
-    setInterval(function(){
-      world.createEntity({
-        name: 'player',
-        x: 28,
-        y: -12,
-        radius: .7,
-        fixedRotation: true,
-        friction: 0,
-        restitution: 0,
-        color: 'yello',
-        shape: 'circle',
-        density: 2
-      });
-
-
-    }, 500);
-    
   }
 }( this, this.dlam, this.boxbox ));

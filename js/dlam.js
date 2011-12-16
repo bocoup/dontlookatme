@@ -1,8 +1,15 @@
+
 document.addEventListener("DOMContentLoaded", function() {
-      
-    var dlam.canvas = document.getElementById('myface');
-    
-    dlam.entity();
+
+  dlam.canvas = document.getElementById('myface');
+
+  dlam.world = boxbox.createWorld(dlam.canvas, {
+    debugDraw:false,
+    gravity: 40
+  });
+
+  dlam.player();
+  dlam.enemies();
     
 }, false);
     
