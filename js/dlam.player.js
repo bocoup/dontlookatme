@@ -1,17 +1,17 @@
 (function( global, dlam, boxbox ) {
   dlam.player = function(){
 
-    var player = dlam.world.createEntity({
+    var player = dlam.player = dlam.world.createEntity({
         name: 'player',
-        x: .5,
+        x: 100,
         y: 12,
-        radius: .4,
+        radius: 1,
         fixedRotation: true,
         friction: .1,
         restitution: 0,
         color: 'blue',
         shape: 'circle',
-        density: 3
+        density: .3
     });
 
     player.health = 100;
@@ -21,7 +21,7 @@
 
       var key = global.keyDecode( e );
       var movementForce = 60;
-      var impulseForce = 30;
+      var impulseForce = 60;
       var lastJump = Date.now();
 
       if( key === 'right' ) {
@@ -63,8 +63,12 @@
 
     player.onImpact(function( entity, force, friction ){
       if( force > 10 && entity.name !== 'terrain'){
-        player.health--
+        player.health-50
         console.log(player.health)
+        if ( player.health > 0) {
+
+          player.destroy()
+        }
       }
     })
 

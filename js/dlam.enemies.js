@@ -3,19 +3,19 @@
 
     setInterval(function(){
       dlam.world.createEntity({
-        name: 'player',
-        x: 28,
+        name: 'enemy',
+        x: dlam.world.camera().x + 300,
         y: -12,
-        radius: .7,
+        radius: 2,
         fixedRotation: true,
         friction: 0,
         restitution: 0,
         color: 'brown',
         shape: 'circle',
-        density: 2
+        density: 10
       });
 
-    }, 500);
+    }, 1500);
 
   }
 }( this, this.dlam, this.boxbox ));
