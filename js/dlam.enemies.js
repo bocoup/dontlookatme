@@ -10,7 +10,7 @@
         fixedRotation: true,
         friction: 0,
         restitution: 0,
-        color: 'yello',
+        color: 'brown',
         shape: 'circle',
         density: 2
       });

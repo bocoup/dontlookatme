@@ -17,21 +17,6 @@
     player.health = 100;
     player.points = 0;
 
-    dlam.world.createEntity({
-      name: 'terrain',
-      shape: 'polygon',
-      x: 0,
-      y: 14,
-      points: [
-        {x: 0, y: 0},
-        {x: 0, y: -1},
-        {x: 60, y: -16},
-        {x: 60, y: -1}
-      ],
-      restitution: 0,
-      type: 'static'
-    });
-
     player.onKeydown(function( e ){
 
       var key = keyDecode( e );

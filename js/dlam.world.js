@@ -15,9 +15,24 @@
         color: 'green'
     };
 
+    // dlam.world.createEntity({
+    //   name: 'terrain',
+    //   shape: 'polygon',
+    //   x: 0,
+    //   y: 14,
+    //   points: [
+    //     {x: 0, y: 0},
+    //     {x: 0, y: -1},
+    //     {x: 60, y: -16},
+    //     {x: 60, y: -1}
+    //   ],
+    //   restitution: 0,
+    //   type: 'static'
+    // });
+
+
     world.camera({x:0, y:0});
-    world.scale(60);
-    console.dir( world );
+    world.scale(20);
 
     function generateInclineBlockThingyOmg( width, height ){
       var points = [],
@@ -61,19 +76,17 @@
       addPoint( x, height );
       addPoint( 0, height );
 
-      console.dir( points );
-
       return points;
     }
 
     world.createEntity({
-      name: 'mountainOfDoom',
+      name: 'terrain',
       type: 'static',
       color: 'black',
       shape: 'polygon',
-      x: 100,
-      y: 50,
-      points: generateInclineBlockThingyOmg( 100, 100 )
+      x: 0,
+      y: 0,
+      points: generateInclineBlockThingyOmg( 0, 0 )
     });
 
   }
