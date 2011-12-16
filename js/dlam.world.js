@@ -16,7 +16,7 @@
     };
 
     world.camera({x:0, y:0});
-    world.scale(1);
+    world.scale(60);
     console.dir( world );
 
     function generateInclineBlockThingyOmg( width, height ){
