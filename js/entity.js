@@ -16,5 +16,12 @@ document.addEventListener("DOMContentLoaded", function() {
         color: 'blue'
     });
 
-    
+    world.createEntity({
+      x: 0,
+      y: 14,
+      width: 20,
+      height: .5,
+      static: true
+    });
+
 }, false);
