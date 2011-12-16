@@ -8,12 +8,12 @@ document.addEventListener("DOMContentLoaded", function() {
         name: 'player',
         x: .5,
         y: 12,
-        height: .2,
-        width: .2,
+        radius: .4,
         fixedRotation: true,
         friction: .3,
         restitution: 0,
-        color: 'blue'
+        color: 'blue',
+        shape: 'circle'
     });
 
     world.createEntity({

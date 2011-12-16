@@ -1,3 +1,6 @@
 [submodule "boxbox"]
 	path = boxbox
 	url = https://github.com/incompl/boxbox
+[submodule "keyDecode"]
+	path = keyDecode
+	url = https://github.com/incompl/keyDecode.git
