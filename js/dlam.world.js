@@ -17,23 +17,6 @@
         density: 100
     };
 
-    // dlam.world.createEntity({
-    //   name: 'terrain',
-    //   shape: 'polygon',
-    //   x: 0,
-    //   y: 14,
-    boazPoints =   [
-         {x: 0, y: 20},
-         {x: 0, y: 10},
-         {x: 190, y: 0},
-         {x: 190, y: 20},
-         {x: 30, y: 20}
-       ];
-    //   restitution: 0,
-    //   type: 'static'
-    // });
-
-
     world.camera({x:-3, y:4});
     world.scale(5);
 

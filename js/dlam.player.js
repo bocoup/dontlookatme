@@ -7,7 +7,7 @@
         y: 12,
         radius: 1,
         fixedRotation: true,
-        friction: .1,
+        friction: 0,
         restitution: 0,
         color: 'blue',
         shape: 'circle',
@@ -38,6 +38,7 @@
 
       if( this.contact && this.jumps < 2 ) {
 
+        this.applyImpulse( impulseForce, 0);
         if( key === 'up' || key === 'space' ) {
           this.jumps++
           this.applyImpulse( impulseForce, 0);
