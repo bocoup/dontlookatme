@@ -11,7 +11,7 @@
         restitution: 0,
         color: 'blue',
         shape: 'circle',
-        density: .3
+        density: 0
     });
 
     player.health = 100;
@@ -63,7 +63,7 @@
     });
 
     player.onImpact(function( entity, force, friction ){
-      if( force > 10 && entity._ops.type !== 'static'){
+      if( force > 80 && entity._ops.type !== 'static' && entity.name !== 'obstacle'){
         player.health-50
         console.log(player.health)
         if ( player.health > 0) {

@@ -5,21 +5,22 @@
       debugDraw:false,
       gravity: 100
     });
-    
-    // create incline/mountain thingy
-     var groundTemplate = {
-        name: 'ground',
-        type: 'static',
-        height: 1,
-        width: 1,
-        color: 'green',
-        restitution: 0,
-        density: 100
-    };
-
     world.camera({x:-3, y:4});
     world.scale(5);
 
+/*
+    world.createEntity({
+        name: 'circle',
+        shape: 'square',
+        radius: 112,
+        type: 'static',
+        x: 434,
+        y: -43,
+        density: .5,
+        image: '/dontlookatme/bocoup-604.png',
+        imageStretchToFit: false
+    });
+*/
     function generateInclineBlockThingyOmg( width, height ){
       var points = [],
           addPoint = function(x,y){
@@ -73,7 +74,7 @@
       points: [
            {x: 0, y: worldHeight},
            {x: 0, y: 10},
-           {x: worldWidth, y: -200},
+           {x: worldWidth, y: -1200},
            {x: worldWidth, y: worldHeight},
            {x: 30, y: worldHeight}
          ]
@@ -86,8 +87,6 @@
        var p = player.position();
        var c = this.camera();
        this.camera({x: player.position().x - 100, y: player.position().y - 70});
-       
-       
     });
 
   }
