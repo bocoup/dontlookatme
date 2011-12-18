@@ -59,7 +59,7 @@
       return points;
     }
     
-    var worldWidth = 1000;
+    var worldWidth = 11000;
     var worldHeight = 100;
 
     world.createEntity({
@@ -67,6 +67,7 @@
       type: 'static',
       color: 'black',
       shape: 'polygon',
+      restitution: 0,
       x: 0,
       y: 90,
       points: [
@@ -85,6 +86,8 @@
        var p = player.position();
        var c = this.camera();
        this.camera({x: player.position().x - 100, y: player.position().y - 70});
+       
+       
     });
 
   }

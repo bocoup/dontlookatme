@@ -4,7 +4,7 @@
     var player = dlam.player = dlam.world.createEntity({
         name: 'player',
         x: 100,
-        y: 12,
+        y: 80,
         radius: 1,
         fixedRotation: true,
         friction: 0,
@@ -20,8 +20,8 @@
     player.onKeydown(function( e ){
 
       var key = global.keyDecode( e );
-      var movementForce = 60;
-      var impulseForce = 60;
+      var movementForce = 160;
+      var impulseForce = 40;
       var lastJump = Date.now();
 
       if( key === 'right' ) {
@@ -63,7 +63,7 @@
     });
 
     player.onImpact(function( entity, force, friction ){
-      if( force > 10 && entity.name !== 'terrain'){
+      if( force > 10 && entity._ops.type !== 'static'){
         player.health-50
         console.log(player.health)
         if ( player.health > 0) {
