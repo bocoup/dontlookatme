@@ -49,7 +49,7 @@
     });
 
     player.onKeyup(function( e ){
-      this.clearForce( 'movement' );
+      player.clearForce( 'movement' );
     });
 
     player.onStartContact(function( e ){
