@@ -2,7 +2,7 @@
   dlam.enemies = function(){
 
     setInterval(function(){
-      dlam.world.createEntity({
+      var enemy = dlam.world.createEntity({
         name: 'enemy',
         x: dlam.world.camera().x + 380,
         y: dlam.world.camera().y -12,

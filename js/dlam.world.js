@@ -76,29 +76,24 @@
           density: 10
         });
       }
-      
+
       // Push each obstacle onto an array held at each bucket
       // so they can be deleted later
       buckets[ curBucket ].push( obstacle );
-      
       // Iterate over all of the buckets
       for( var key in buckets ){
         // If the the current bucket we are looking at is more than
         // 5 buckets behind
         if( key < (curBucket - 5) ) {
-          
             // Iterate over the obstacles in that bucket
             for( var i in buckets[ key ] ){
                 // And destroy it
                 buckets[ key ][ i ].destroy();
                 // And delete it from the bucket
                 delete buckets[ key ][ i ];
-
             }
-
         }
       }
-      
     }, 200);
 
   }
