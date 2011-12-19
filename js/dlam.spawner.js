@@ -37,7 +37,7 @@
     setReapCallback: function(reapCallbackFn) {
       this.reapCallback = reapCallbackFn;
     },
-
+    
     reap: function() {
       var curBucket = this.getCurrentBucket();
       // Iterate over all of the buckets
