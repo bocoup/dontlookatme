@@ -10,7 +10,9 @@
         fixedRotation: true,
         friction: 0,
         restitution: .7,
-        image: 'img/boulder-'+ Math.floor(Math.random() * 100) % 4 +'.png',
+        // Add back for boulder enemies
+        // image: 'img/boulder-'+ Math.floor(Math.random() * 100) % 4 +'.png',
+        color: 'd6364e',
         shape: 'circle',
         density: 110
       });
@@ -23,7 +25,7 @@
 
     setInterval(function(){
       for( var enemy in enemCache ) {
-        if( dlam.player.position().x > ( enemCache[ enemy ].position().x + 2)) {
+        if( !dlam.player._destroyed && dlam.player.position().x > ( enemCache[ enemy ].position().x + 2)) {
           score++;
           document.querySelector("#score").innerHTML = score;
           delete enemCache[ enemy ];

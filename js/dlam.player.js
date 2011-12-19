@@ -5,7 +5,7 @@
         name: 'player',
         x: 100,
         y: 80,
-        radius: 4,
+        radius: 3.5,
         fixedRotation: true,
         friction: 2,
         restitution: 0,
@@ -62,7 +62,6 @@
         player.health-50
         console.log(player.health)
         if ( player.health > 0) {
-
           player.destroy()
         }
       }
