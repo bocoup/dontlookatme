@@ -7,7 +7,7 @@
         y: 80,
         radius: 1,
         fixedRotation: true,
-        friction: 0,
+        friction: 2,
         restitution: 0,
         color: 'blue',
         shape: 'circle',
@@ -20,30 +20,24 @@
     player.onKeydown(function( e ){
 
       var key = global.keyDecode( e );
-      var movementForce = 160;
-      var impulseForce = 40;
+      var movementForce = 300;
+      var impulseForce = 100;
       var lastJump = Date.now();
 
       if( key === 'right' ) {
-        this.setForce( 'movement', movementForce, 90);
+        this.setForce( 'movement', movementForce, 1 * movementForce, 0);
       }
 
       if( key === 'left' ) {
-        this.setForce( 'movement', movementForce, 270);
-      }
-
-      if( key === 'down' ) {
-        this.setForce( 'movement', movementForce, 180);
+        this.setForce( 'movement', movementForce, -1 * movementForce, 0);
       }
 
       if( this.contact && this.jumps < 2 ) {
 
-        this.applyImpulse( impulseForce, 0);
         if( key === 'up' || key === 'space' ) {
           this.jumps++
           this.applyImpulse( impulseForce, 0);
         }
-
       }
 
     });
