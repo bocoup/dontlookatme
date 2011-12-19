@@ -23,7 +23,7 @@
 
     setInterval(function(){
       for( var enemy in enemCache ) {
-        if( dlam.player.position().x > ( enemCache[ enemy ].position().x + 20)) {
+        if( dlam.player.position().x > ( enemCache[ enemy ].position().x + 2)) {
           score++;
           document.querySelector("#score").innerHTML = score;
           delete enemCache[ enemy ];
