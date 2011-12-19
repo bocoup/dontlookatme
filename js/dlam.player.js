@@ -12,7 +12,7 @@
        friction: .2,
        restitution: 0,
        // color: 'blue',
-       image: '/dontlookatme/demon.png',
+       image: 'img/demon-1.png',
        shape: 'circle',
        imageStretchToFit: false,
        density: 0
