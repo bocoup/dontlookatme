@@ -19,11 +19,8 @@ section {
   line-height: 1.5;
   text-align: left;
 }
-figure {
-  display: inline;
-  padding: 0px;
-  margin: 0px;
-  color: blue;
+a {
+  color: #000099;
   font-weight: bold;
 }
 small {

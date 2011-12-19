@@ -27,7 +27,10 @@
       for( var enemy in enemCache ) {
         if( !dlam.player._destroyed && dlam.player.position().x > ( enemCache[ enemy ].position().x + 2)) {
           score++;
-          document.querySelector("#score").innerHTML = score;
+          var scoreElem = document.querySelector("#score");
+          var scoreString = score + (score > 1 ? " points" : " point");
+          scoreElem.innerHTML = scoreString;
+          scoreElem.href = "http://twitter.com/intent/tweet?source=webclient&text=I%20just%20scored%20" + scoreString + "%20in%20Don't%20Look%20At%20Me%3A%20http%3A%2F%2Fdontlookatme.maryrosecook.com";
           delete enemCache[ enemy ];
         }
       }
