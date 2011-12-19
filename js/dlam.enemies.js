@@ -10,7 +10,7 @@
         fixedRotation: true,
         friction: 0,
         restitution: .7,
-        color: 'brown',
+        image: 'img/boulder-'+ Math.floor(Math.random() * 100) % 4 +'.png',
         shape: 'circle',
         density: 110
       });
