@@ -20,8 +20,8 @@
     player.onKeydown(function( e ){
 
       var key = global.keyDecode( e );
-      var movementForce = 300;
-      var impulseForce = 100;
+      var movementForce = 600;
+      var impulseForce = 300;
       var lastJump = Date.now();
 
       if( key === 'right' ) {
