@@ -1,3 +1,31 @@
+body {
+  text-align: center;
+}
 #myface {
+  margin: 0 auto;
   border:1px solid #444;
+}
+h1 {
+  font-family: 'Monoton', sans-serif;
+  margin: 0;
+  padding: 0px;
+}
+section {
+  font-family: georgia;
+  font-size: 20px;
+  margin: 0 auto;
+  width: 650px;
+  padding: 10px 350px 20px 0 ;
+  line-height: 1.5;
+  text-align: left;
+}
+figure {
+  display: inline;
+  padding: 0px;
+  margin: 0px;
+  color: blue;
+  font-weight: bold;
+}
+small {
+  font-size: 12px;
 }
