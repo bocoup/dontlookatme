@@ -7,7 +7,7 @@
        y: 80,
        radius: 1,
        fixedRotation: true,
-       friction: 2,
+       friction: .2,
        restitution: 0,
        color: 'blue',
        shape: 'circle',

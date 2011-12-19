@@ -69,7 +69,7 @@
           width: Math.random() * 15,
           height: Math.random() * 15,
           fixedRotation: false,
-          friction: 10,
+          friction: .1,
           restitution: 0,
           color: 'black',
           shape: 'square', //Math.random() > 0.5 ? 'triangle' :
