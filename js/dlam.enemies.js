@@ -5,14 +5,14 @@
       dlam.world.createEntity({
         name: 'enemy',
         x: dlam.world.camera().x + 380,
-        y: -12,
+        y: dlam.world.camera().y -12,
         radius: 2,
         fixedRotation: true,
         friction: 0,
         restitution: .7,
         color: 'brown',
         shape: 'circle',
-        density: 10
+        density: 110
       });
     }, 1500);
   }

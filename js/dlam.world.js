@@ -40,7 +40,7 @@
     // Terrain generation
     
     // The global store of obstacles
-    var obstacles = global.obstacles = {};
+    var buckets = global.buckets = {};
 
     setInterval(function(){
       // The X position where we will spawn the obstacle
@@ -55,19 +55,19 @@
 
       // If the curBucket of obstacles is null initalize
       // it to an array
-      if ( ! obstacles[ curBucket ] ) {
-        obstacles[ curBucket ] = [];
+      if ( ! buckets[ curBucket ] ) {
+        buckets[ curBucket ] = [];
       }
       
       // If there are less than 20 obstacles in the current bucket
       // spawn an obstacle. This is our throttling mechanism.
-      if ( obstacles[ curBucket ].length < 20 ) {
+      if ( buckets[ curBucket ].length < 40 ) {
         var obstacle = dlam.world.createEntity({
           name: 'obstacle',
           x: obstacleX,
           y: obstacleY,
-          width: Math.random() * 5,
-          height: Math.random() * 5,
+          width: Math.random() * 15,
+          height: Math.random() * 15,
           fixedRotation: false,
           friction: 10,
           restitution: 0,
@@ -79,25 +79,27 @@
       
       // Push each obstacle onto an array held at each bucket
       // so they can be deleted later
-      obstacles[ curBucket ].push( obstacle );
+      buckets[ curBucket ].push( obstacle );
       
-      // Iterate over all of the 
-      for( var key in obstacles ){
+      // Iterate over all of the buckets
+      for( var key in buckets ){
+        // If the the current bucket we are looking at is more than
+        // 5 buckets behind
         if( key < (curBucket - 5) ) {
-
-
-            for( var i in obstacles[ key ] ){
-
-//                console.log(obstacles[ key ][ i ])
-                obstacles[ key ][ i ].destroy();
-                delete obstacles[ key ][ i ];
+          
+            // Iterate over the obstacles in that bucket
+            for( var i in buckets[ key ] ){
+                // And destroy it
+                buckets[ key ][ i ].destroy();
+                // And delete it from the bucket
+                delete buckets[ key ][ i ];
 
             }
 
         }
       }
       
-    }, 300);
+    }, 200);
 
   }
 }( this, this.dlam, this.boxbox ));
