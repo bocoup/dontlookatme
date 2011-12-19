@@ -1,5 +1,4 @@
 (function( global, dlam, boxbox ) {
-<<<<<<< HEAD
   dlam.player = function(){
 
     var player = dlam.player = dlam.world.createEntity({

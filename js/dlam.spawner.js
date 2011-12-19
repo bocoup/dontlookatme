@@ -34,6 +34,10 @@
       return Math.floor( dlam.world.camera().x / 100)
     },
 
+    setReapCallback: function(reapCallbackFn) {
+      this.reapCallback = reapCallbackFn;
+    },
+
     reap: function() {
       var curBucket = this.getCurrentBucket();
       // Iterate over all of the buckets
@@ -47,6 +51,10 @@
             this.buckets[ key ][ i ].destroy();
             // And delete it from the bucket
             delete this.buckets[ key ][ i ];
+
+            if(this.reapCallback) {
+              this.reapCallback();
+            }
           }
         }
       }

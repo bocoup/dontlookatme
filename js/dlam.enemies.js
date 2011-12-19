@@ -15,5 +15,11 @@
       });
       return enemy;
     });
+
+    var score = 0;
+    enemySpawner.setReapCallback(function() {
+      score++;
+      document.querySelector("#score").innerHTML = score;
+    });
   }
 }( this, this.dlam, this.boxbox ));
