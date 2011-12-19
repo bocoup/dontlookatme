@@ -28,7 +28,7 @@
            {x: 30, y: worldHeight}
          ]
     });
-    var counter = 0;
+    var spriteCounter = 0;
     // update camera position every draw
      world.onRender(function(ctx) {
        var player = dlam.player;
@@ -36,9 +36,11 @@
        var c = this.camera();
        this.camera({x: player.position().x - 100, y: player.position().y - 70});
        
-       player._sprite.src = "img/demon-"+ counter % 6 + ".png"
+       if( player.contact ) {
+         player._sprite.src = "img/demon-"+ spriteCounter % 6 + ".png"
+       }
        
-       counter ++;
+       spriteCounter ++;
     });
 
     // Terrain generation
