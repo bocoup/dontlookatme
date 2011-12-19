@@ -5,12 +5,13 @@
         name: 'player',
         x: 100,
         y: 80,
-        radius: 1,
+        radius: 4,
         fixedRotation: true,
         friction: 2,
         restitution: 0,
         color: 'blue',
         shape: 'circle',
+        image: 'img/demon-0.png',
         density: 0
     });
 
