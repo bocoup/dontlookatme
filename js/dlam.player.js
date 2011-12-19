@@ -5,12 +5,16 @@
        name: 'player',
        x: 100,
        y: 80,
-       radius: 1,
+       radius: 5,
+       imageOffsetX: -20,
+       imageOffsetY: -10,
        fixedRotation: true,
        friction: .2,
        restitution: 0,
-       color: 'blue',
+       // color: 'blue',
+       image: '/dontlookatme/demon.png',
        shape: 'circle',
+       imageStretchToFit: false,
        density: 0
    });
 
