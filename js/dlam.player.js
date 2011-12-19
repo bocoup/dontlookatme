@@ -59,11 +59,7 @@
 
     player.onImpact(function( entity, force, friction ){
       if( force > 80 && entity._ops.type !== 'static' && entity.name !== 'obstacle'){
-        player.health-50
-        console.log(player.health)
-        if ( player.health > 0) {
-          player.destroy()
-        }
+        player.destroy()
       }
     })
 
